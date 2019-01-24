@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+    Ejemplo donde se modifica tanto el árbol DOM como los estilos.
+
+    Con jQuery !!
+-->
+<html>
+    <head>
+        <title>Modifica DOM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            /* Las tres funciones siguientes cambian los estilos de "contenido" */
+            function rojo() {
+                $("#contenido").css("background","red");
+            }
+            function verde() {
+                $("#contenido").css("background","lightgreen");
+            }
+            function limpiar() {
+                $("#contenido").css("background","");
+            }            
+            
+            function incluyeParrafo() {
+                /* Se recoge el texto introducido en el cuadro de texto */
+                var txt = $("[name=texto]").val();
+                /* Crea un elemento <p> */
+                var p = document.createElement("p");
+                /* Lo rellena con el texto */
+                p.innerHTML = txt;
+                /* Lo añade al div "contenido" */
+                $("#contenido").append(p);
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+        <div id="botones">
+                <input type="button" value="Rojo" onclick="javascript:rojo();"/>
+                <input type="button" value="Verde" onclick="javascript:verde();"/>
+                <input type="button" value="Limpiar" onclick="javascript:limpiar();"/>
+                <br/><br/>
+                <input name="texto" type="text" size="20" />
+                <input type="button" value="Añade párrafo" onclick="javascript:incluyeParrafo();"/>
+        </div>
+        <br>
+        <div id="contenido">
+            <p>Primer párrafo.</p>
+        </div>
+    </body>
+</html>

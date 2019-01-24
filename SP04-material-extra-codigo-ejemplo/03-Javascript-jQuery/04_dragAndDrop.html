@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+    Ejemplo de manejo de eventos para la acción Drag and Drop
+-->
+<html>
+    <head>
+        <title>Drag and Drop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style> 
+            .ctn {
+                border: 1px solid;
+                width: 800px;
+            }
+            .ctn p {
+                color: red;
+            }
+        </style>
+        <script type="text/javascript">
+            // Se ejecuta al inicio de la acción de arrastrar.
+            function agarrar(ev) {
+                ev.dataTransfer.setData("Text",ev.target.id);
+            }
+            
+            // Se ejecuta al soltar.
+            function soltar(ev) {
+                ev.preventDefault();
+                var data=ev.dataTransfer.getData("Text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+            
+            function permiteDrop(ev) {
+                ev.preventDefault();
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Los manejadores de eventos se pueden asociar a cada nodo directamente -->
+        <div ondragover="permiteDrop(event)" ondrop="soltar(event)">
+            <p><a href="www.google.com">Enlace a Google</a></p>
+            <p>Párrafo no arrastrable</p>
+            <p id="p1" draggable="true" style="cursor: move;" ondragstart="agarrar(event)">Párrafo arrastrable</p>
+        </div>
+        <br>
+        <div id="contenedor1" class="ctn" ondragover="permiteDrop(event)" ondrop="soltar(event)">
+            <br>
+        </div>
+        <br><br>
+        <div id="contenedor2" class="ctn" ondragover="permiteDrop(event)" ondrop="soltar(event)">
+            <br>
+        </div>        
+    </body>
+</html>

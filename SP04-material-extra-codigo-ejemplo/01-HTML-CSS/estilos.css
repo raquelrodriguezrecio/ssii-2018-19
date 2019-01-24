@@ -1,0 +1,48 @@
+/*
+    Primer ejemplo sencillo de CSS: estilos.
+*/
+
+/* Atributos para body: color de fondo y tamaño de fuente */
+body {
+    /* Color de fondo */
+    background: #cce4f9;
+    font-family: Arial;
+    /* Color de fuente */
+    color: #0b0079;
+}
+
+/* Atributos para elemento con id="contenedor" */
+#contenedor {
+    /* Margen superior ampliado */
+    margin-top: 50px;
+    /* Borde */
+    border: 3px solid #000000;
+}
+
+/* Todos los divs aumentan padding y tienen borde. */
+div {
+    padding: 20px;
+    border: 2px dashed grey;
+}
+
+/* Elementos clase p1 tienen fuente en rojo */
+.p1 {
+    /* El color se puede especificar de varias maneras */
+    color: red;
+}
+
+/* Estilos de tabla */
+table {
+    border: 1px solid black;
+}
+
+th {
+    font-weight: bold;
+    border-bottom: 1px solid red;
+}
+
+
+/* Los enlaces dentro de clase listado no tienen subrayado */
+.listado a {
+    text-decoration: none;
+}

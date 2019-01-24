@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+    Ejemplo de manejo de eventos con Javascript.
+-->
+<html>
+    <head>
+        <title>Eventos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Estilos incrustados en head, se pueden sacar a un fichero externo */
+            #cuadro {
+                width: 300px;
+                height: 300px;
+                position: absolute;
+                border: 1px solid black;
+            }
+        </style>
+        <script type="text/javascript">
+            function posicionRandom() {
+                /* Número aleatorio entre 0 el ancho de pantalla */
+                var x = Math.floor((Math.random() * screen.width))+"px"; 
+                /* Idem alto de pantalla */
+                var y = Math.floor((Math.random() * screen.height))+"px";
+                /* Recoloca posición del cuadro */
+                document.getElementById("cuadro").style.setProperty("left",x);                
+                document.getElementById("cuadro").style.setProperty("top",y);
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>Intenta hacer click sobre el cuadro</p>
+            <div id="cuadro"></div>
+        </div>
+        <script type="text/javascript">
+            /* Asocia manejador al evento onMouseEnter */
+            var cuadro = document.getElementById("cuadro");
+            cuadro.addEventListener("mouseover", posicionRandom, false);
+        </script>
+            
+    </body>
+</html>

@@ -1,0 +1,51 @@
+/*
+    Estilos adaptados (responsive web design)
+*/
+
+#banner {
+    background-image: url("img/water-hd.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: content-box; 
+    width: 1000px;
+    height: 200px;
+
+}
+
+#banner h1 {
+    display: none;
+}
+
+#banner h3 {
+    display: none;
+}
+
+
+/* Resolución para TABLET: 768px o menos*/
+@media screen and (max-width: 768px) {
+    #banner {
+        background-image: none;
+        height: auto;
+        background: lightblue;
+        width: 100%;
+    } 
+    #banner h1 {
+        display: block;
+    }
+
+    #banner h3 {
+        display: none;
+    }
+}
+
+
+/* Resolución para Móvil: 480px o menos */
+@media screen and (max-width: 480px) {
+    #banner h1 {
+        display: none;
+    }
+
+    #banner h3 {
+        display: block;
+    }
+}

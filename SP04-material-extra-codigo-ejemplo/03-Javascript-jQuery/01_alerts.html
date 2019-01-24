@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+     Ejemplo de ejecución de Javascript según se va renderizando.
+-->
+<html>
+    <head>
+        <title>Alerts</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script type="text/javascript">
+            function adios() {
+                /* Esta funcion no se ejecuta hasta que no la invocan */
+                alert('Adiós');
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div>
+            <p>Este párrafo se muestra siempre.</p>
+            <script type="text/javascript">
+                alert('Hola');
+            </script>
+            <p>Este párrafo se muestra después del saludo.</p>
+            <br/>
+            <input type="button" onclick="javascript:adios();" value="Despedida con botón"/>
+            <br/><br/>
+            <a href="javascript:adios();">Despedida con enlace</a>
+        </div>
+    </body>
+</html>

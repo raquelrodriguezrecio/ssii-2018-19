@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+    Listas desplegables con jQuery
+-->
+<html>
+    <head> <title>Listas desplegables jQuery</title> <meta charset="UTF-8">
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+       </script>
+       <script>            
+          $(document).ready(function() {
+             // Oculta los divs cuya clase es "listado":
+             $("div.listado").hide();
+             /* Incluye un manejador (función) en evento click de párrafos "encabezado".
+              * Los hermanos del mismo nivel (siblings) se ocultan al hacer click en el "p". */
+             $("p.encabezado").click(function(){
+                // Al hacer click, se muestra el siguiente div de clase "listado"
+                // que se encuetre tras el "p".
+                 $(this).next("div.listado").slideDown(300)
+                    .siblings("div.listado").slideUp("slow");
+             });
+          });
+        </script>
+    </head>
+    <body>
+        <p class="encabezado">Animales de Zoo</p>
+        <div class="listado">
+            <p>León</p> <p>Elefante</p> <p>Jirafa</p>
+        </div>
+        <p class="encabezado">Animales de Granja</p>
+        <div class="listado">
+            <p>Gallina</p> <p>Cerdo</p>
+        </div>
+    </body>
+</html>
